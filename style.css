@@ -76,19 +76,15 @@ nav a.active {
 
 /* -------------------------------
    Parallax Hero Section
-   - Using dino3.jpg as the background
-   - Removed any border-bottom
 --------------------------------- */
 .hero-parallax {
   position: relative;
-  /* extend the height so it can flow nicely into the about section */
   min-height: 70vh;
   background: url("images/dino3.jpg") center center/cover no-repeat fixed; 
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  /* no border-bottom so it flows seamlessly */
   border-bottom: none;
 }
 
@@ -138,22 +134,13 @@ nav a.active {
   background-color: #ff9548;
 }
 
-/* 
-  Removed the .hero-secondary-image class 
-  because we no longer need a separate 
-  dino3.jpg <img> inside the hero. 
-*/
-
 /* -------------------------------
    Section Base
-   - Removed border-bottom for about-section
-   to ensure the background flows from hero
-   to about seamlessly
 --------------------------------- */
 section {
   padding: 3rem 1.5rem;
   text-align: center;
-  border-bottom: 1px solid #333; /* default for most sections */
+  border-bottom: 1px solid #333;
 }
 
 .section-inner {
@@ -163,13 +150,11 @@ section {
 
 /* -------------------------------
    About Section
-   - No separate background
-   - No border-bottom 
-   (We'll remove it after this rule)
+   Flows seamlessly from hero
 --------------------------------- */
 .about-section {
-  border-bottom: none; /* remove borderline so it flows seamlessly from hero */
-  margin-top: -1rem;   /* optional: pull it up slightly for a smoother transition */
+  border-bottom: none;
+  margin-top: -1rem; /* optional: pull it up slightly for a smoother transition */
 }
 
 .about-section h2 {
@@ -181,6 +166,46 @@ section {
 .about-section p {
   color: #ccc;
   margin-bottom: 1.5rem;
+}
+
+/* -------------------------------
+   NEW: Contract Address Section
+   Stand-out styling + fade-in
+--------------------------------- */
+.contract-section {
+  border-bottom: 1px solid #333;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.contract-section h2 {
+  font-size: 2rem;
+  color: #FFAF52;
+  margin-bottom: 1rem;
+}
+
+/* Glowing animation for contract address text */
+.contract-text {
+  font-size: 1.125rem;
+  color: #FFAF52;
+  margin-top: 1rem;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(255, 175, 82, 0.7), 
+               0 0 20px rgba(255, 175, 82, 0.4);
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Keyframes for glowing text effect */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 175, 82, 0.7),
+                 0 0 20px rgba(255, 175, 82, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 175, 82, 1),
+                 0 0 20px rgba(255, 175, 82, 0.8),
+                 0 0 30px rgba(255, 175, 82, 0.6);
+  }
 }
 
 /* -------------------------------
@@ -224,10 +249,6 @@ section {
 /* -------------------------------
    Roadmap Section
 --------------------------------- */
-.roadmap-section {
-  border-bottom: 1px solid #333;
-}
-
 .roadmap-section h2 {
   font-size: 2rem;
   color: #FFAF52;
@@ -248,10 +269,6 @@ section {
 /* -------------------------------
    Community Section
 --------------------------------- */
-.community-section {
-  border-bottom: 1px solid #333;
-}
-
 .community-section h2 {
   font-size: 2rem;
   color: #FFAF52;
@@ -288,7 +305,6 @@ section {
    Gallery Section
 --------------------------------- */
 .gallery-section {
-  border-bottom: 1px solid #333;
   padding: 3rem 1.5rem;
   text-align: center;
 }
@@ -413,7 +429,6 @@ footer {
     margin-top: 1rem;
   }
 
-  /* Hero smaller on mobile */
   .hero-parallax {
     min-height: 50vh;
   }
